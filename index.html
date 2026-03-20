@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MARDAKHAY | AI &amp; Data Science Engineering</title>
+  <meta name="description" content="Mardakhay — Architecting intelligence. High-precision AI frameworks and data engineering." />
+
+  <!-- Preconnect for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom cursor elements -->
+  <div id="cursor-dot"  aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Scroll progress indicator -->
+  <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <!-- ── Navigation ─────────────────────────────── -->
+  <nav id="navbar" role="navigation" aria-label="Primary navigation">
+    <a href="#hero" class="nav-logo" aria-label="Mardakhay — back to top">MARDAKHAY</a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#services">Engineering</a></li>
+      <li><a href="#partners">Partners</a></li>
+    </ul>
+
+    <a href="#cta" class="nav-cta"><span>Connect</span></a>
+
+    <!-- Mobile hamburger -->
+    <button
+      class="nav-hamburger"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="nav-mobile"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile navigation overlay -->
+  <div
+    id="nav-mobile"
+    class="nav-mobile"
+    aria-hidden="true"
+    role="dialog"
+    aria-label="Navigation menu"
+  >
+    <a href="#solutions">Solutions</a>
+    <a href="#services">Engineering</a>
+    <a href="#partners">Partners</a>
+    <a href="#cta">Connect</a>
+  </div>
+
+  <main>
+
+    <!-- ── Hero ───────────────────────────────────── -->
+    <section id="hero" aria-label="Hero">
+      <div class="hero-bg-grid"  aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow reveal">EST. 2015 — Architecting Intelligence</p>
+        <h1 class="hero-title reveal reveal-delay-1">
+          The Monolith<br>
+          <span class="line-accent">of Data</span><br>
+          Industry
+        </h1>
+        <p class="hero-sub reveal reveal-delay-2">
+          We engineer high-precision AI frameworks that transform chaotic
+          data into immovable market advantages. Authority through
+          engineering rigor.
+        </p>
+        <div class="hero-actions reveal reveal-delay-3">
+          <a href="#solutions" class="btn-primary"><span>Initiate Protocol</span></a>
+          <a href="#services"  class="btn-ghost">Documentation</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ── Metrics ────────────────────────────────── -->
+    <section id="metrics" aria-label="Key performance metrics">
+      <div class="metric-cell reveal">
+        <p class="metric-label">Processing Latency</p>
+        <div class="metric-value" data-count="0.4ms">—</div>
+        <p class="metric-tag">↑ 12.4% Efficiency</p>
+      </div>
+      <div class="metric-cell reveal reveal-delay-1">
+        <p class="metric-label">Neural Parameters</p>
+        <div class="metric-value" data-count="14.2T">—</div>
+        <p class="metric-tag">Optimized Core</p>
+      </div>
+      <div class="metric-cell reveal reveal-delay-2">
+        <p class="metric-label">Data Throughput</p>
+        <div class="metric-value" data-count="84PB">—</div>
+        <p class="metric-tag">Annual Volume</p>
+      </div>
+      <div class="metric-cell reveal reveal-delay-3">
+        <p class="metric-label">Uptime Reliability</p>
+        <div class="metric-value" data-count="99.96%">—</div>
+        <p class="metric-tag">System Integrity</p>
+      </div>
+    </section>
+
+    <!-- ── Solutions ──────────────────────────────── -->
+    <section id="solutions" aria-labelledby="solutions-heading">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-eyebrow">Core Products</p>
+          <h2 id="solutions-heading" class="section-title">Engineering<br>Solutions</h2>
+        </div>
+        <p class="section-desc">
+          Precision-built tools for sovereign data control and
+          autonomous intelligence scaling.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+
+        <!-- Card 1 — Neural Fabric (main, 8 cols) -->
+        <article class="bento-card bento-main reveal">
+          <div>
+            <p class="card-tag">Core Infrastructure</p>
+            <h3 class="card-title">Internal<br>Neural Fabric</h3>
+            <p class="card-desc">
+              The backbone of organisational intelligence. A proprietary mesh
+              of LLMs and vector databases integrated directly into your
+              legacy architecture.
+            </p>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end">
+            <a href="#" class="card-arrow" aria-label="Learn more about Neural Fabric">
+              <span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span>
+            </a>
+          </div>
+          <span class="card-ghost-text" aria-hidden="true">INFRA</span>
+        </article>
+
+        <!-- Card 2 — SDK (side, 4 cols) -->
+        <article class="bento-card bento-side reveal reveal-delay-1">
+          <div>
+            <span class="material-symbols-outlined" style="font-size:2.2rem;color:var(--white);margin-bottom:20px;display:block" aria-hidden="true">terminal</span>
+            <h3 class="card-title" style="font-size:1.8rem">M.SDK 2.0</h3>
+            <p class="card-desc">Deployment-ready toolkits for high-frequency data engineering and predictive modeling.</p>
+          </div>
+          <ul class="card-list" aria-label="SDK features">
+            <li>Scalable Nodes</li>
+            <li>Auto-Encryption</li>
+            <li>Real-time Telemetry</li>
+          </ul>
+        </article>
+
+        <!-- Card 3 — Intelligence Audit (small, 4 cols) -->
+        <article class="bento-card bento-small reveal reveal-delay-2">
+          <div>
+            <h3 class="card-title" style="font-size:1.8rem">Intelligence Audit</h3>
+            <p class="card-desc">Systemic verification of AI outputs to ensure ethical alignment and mathematical accuracy.</p>
+          </div>
+          <!-- Inline SVG matrix — no external image needed -->
+          <div class="audit-matrix" aria-label="Cybersecurity matrix visualisation">
+            <svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" class="audit-svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%"   stop-color="#4a7cff" stop-opacity="0"/>
+                  <stop offset="50%"  stop-color="#4a7cff" stop-opacity="0.5"/>
+                  <stop offset="100%" stop-color="#4a7cff" stop-opacity="0"/>
+                </linearGradient>
+                <filter id="nodeGlow">
+                  <feGaussianBlur stdDeviation="1.5" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <!-- Grid: horizontal -->
+              <line x1="0" y1="25"  x2="320" y2="25"  stroke="rgba(74,124,255,.15)" stroke-width="0.5"/>
+              <line x1="0" y1="50"  x2="320" y2="50"  stroke="rgba(74,124,255,.15)" stroke-width="0.5"/>
+              <line x1="0" y1="75"  x2="320" y2="75"  stroke="rgba(74,124,255,.15)" stroke-width="0.5"/>
+              <line x1="0" y1="100" x2="320" y2="100" stroke="rgba(74,124,255,.15)" stroke-width="0.5"/>
+              <line x1="0" y1="125" x2="320" y2="125" stroke="rgba(74,124,255,.15)" stroke-width="0.5"/>
+              <!-- Grid: vertical -->
+              <line x1="40"  y1="0" x2="40"  y2="150" stroke="rgba(74,124,255,.1)" stroke-width="0.5"/>
+              <line x1="80"  y1="0" x2="80"  y2="150" stroke="rgba(74,124,255,.1)" stroke-width="0.5"/>
+              <line x1="120" y1="0" x2="120" y2="150" stroke="rgba(74,124,255,.1)" stroke-width="0.5"/>
+              <line x1="160" y1="0" x2="160" y2="150" stroke="rgba(74,124,255,.1)" stroke-width="0.5"/>
+              <line x1="200" y1="0" x2="200" y2="150" stroke="rgba(74,124,255,.1)" stroke-width="0.5"/>
+              <line x1="240" y1="0" x2="240" y2="150" stroke="rgba(74,124,255,.1)" stroke-width="0.5"/>
+              <line x1="280" y1="0" x2="280" y2="150" stroke="rgba(74,124,255,.1)" stroke-width="0.5"/>
+              <!-- Connection lines -->
+              <line x1="40"  y1="25"  x2="120" y2="25"  stroke="rgba(74,212,128,.25)" stroke-width="0.8"/>
+              <line x1="120" y1="25"  x2="200" y2="50"  stroke="rgba(74,212,128,.2)"  stroke-width="0.8"/>
+              <line x1="200" y1="50"  x2="280" y2="25"  stroke="rgba(74,212,128,.2)"  stroke-width="0.8"/>
+              <line x1="80"  y1="75"  x2="160" y2="100" stroke="rgba(74,124,255,.2)"  stroke-width="0.8"/>
+              <line x1="160" y1="100" x2="240" y2="75"  stroke="rgba(74,124,255,.2)"  stroke-width="0.8"/>
+              <line x1="40"  y1="125" x2="160" y2="100" stroke="rgba(74,212,128,.15)" stroke-width="0.8"/>
+              <!-- Nodes: verified (green) -->
+              <circle cx="40"  cy="25"  r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="120" cy="25"  r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="200" cy="50"  r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="280" cy="25"  r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="80"  cy="75"  r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="240" cy="75"  r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="160" cy="100" r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="40"  cy="125" r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="280" cy="125" r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <!-- Nodes: active (blue) -->
+              <circle cx="80"  cy="25"  r="2.5" fill="#4a7cff" filter="url(#nodeGlow)" opacity="0.8"/>
+              <circle cx="160" cy="50"  r="2.5" fill="#4a7cff" filter="url(#nodeGlow)" opacity="0.8"/>
+              <circle cx="120" cy="100" r="2.5" fill="#4a7cff" filter="url(#nodeGlow)" opacity="0.8"/>
+              <circle cx="200" cy="125" r="2.5" fill="#4a7cff" filter="url(#nodeGlow)" opacity="0.8"/>
+              <!-- Nodes: flagged anomalies (red) -->
+              <circle cx="160" cy="25"  r="3" fill="#f87171" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="0"   cy="75"  r="3" fill="#f87171" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="320" cy="100" r="3" fill="#f87171" filter="url(#nodeGlow)" opacity="0.9"/>
+              <!-- Anomaly cross on flagged node -->
+              <line x1="155" y1="20" x2="165" y2="30" stroke="#f87171" stroke-width="1.2" opacity="0.85"/>
+              <line x1="165" y1="20" x2="155" y2="30" stroke="#f87171" stroke-width="1.2" opacity="0.85"/>
+              <!-- Scan line -->
+              <rect x="0" y="0" width="320" height="18" fill="url(#scanGrad)" opacity="0.6">
+                <animateTransform attributeName="transform" type="translate"
+                  from="0,0" to="0,150" dur="2.8s" repeatCount="indefinite"/>
+              </rect>
+              <!-- Status readout -->
+              <text x="8" y="144"
+                font-family="'JetBrains Mono', monospace"
+                font-size="7" fill="rgba(74,212,128,.7)" letter-spacing="0.05em">
+                SCAN ACTIVE — 3 ANOMALIES FLAGGED
+              </text>
+            </svg>
+          </div>
+        </article>
+
+        <!-- Card 4 — M-Cloud (wide, 8 cols) -->
+        <article class="bento-card bento-wide reveal reveal-delay-1"
+          style="display:flex; flex-direction:row; gap:48px; align-items:center; flex-wrap:wrap">
+          <div style="flex:1; min-width:240px">
+            <p class="card-tag">Sovereign Hosting</p>
+            <h3 class="card-title">M-Cloud Alpha</h3>
+            <p class="card-desc">
+              Sovereign cloud hosting tuned for GPU-intensive workloads
+              and massive dataset training pipelines.
+            </p>
+            <a href="#" class="section-link" style="margin-top:28px; display:inline-block">
+              Request Access →
+            </a>
+          </div>
+          <div class="card-terminal" style="flex:1; min-width:260px">
+            <div class="t-line">system.init_sovereign_node()</div>
+            <div class="t-line active">&gt;&gt; Loading Encryption Keys...</div>
+            <div class="t-line active">&gt;&gt; Establishing Neural Link...</div>
+            <div class="t-line success">&gt;&gt; CONNECTION SECURE</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── Services ───────────────────────────────── -->
+    <section id="services" aria-labelledby="services-heading">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-eyebrow">Disciplines</p>
+          <h2 id="services-heading" class="section-title">What We<br>Engineer</h2>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="service-number" aria-hidden="true">01</div>
+          <h3 class="service-title">AI Engineering</h3>
+          <p class="service-desc">
+            Developing bespoke LLMs and generative agents that mirror your
+            specific organisational logic and domain expertise.
+          </p>
+          <div class="service-bar" aria-hidden="true"></div>
+        </article>
+
+        <article class="service-card reveal reveal-delay-2">
+          <div class="service-number" aria-hidden="true">02</div>
+          <h3 class="service-title">Machine Learning</h3>
+          <p class="service-desc">
+            Predictive analytics frameworks that identify market anomalies
+            before they manifest, using non-linear modelling techniques.
+          </p>
+          <div class="service-bar" aria-hidden="true"></div>
+        </article>
+
+        <article class="service-card reveal reveal-delay-4">
+          <div class="service-number" aria-hidden="true">03</div>
+          <h3 class="service-title">Data Architecture</h3>
+          <p class="service-desc">
+            Hardening data pipelines to eliminate bottlenecks and ensure
+            high-fidelity inputs for downstream intelligence operations.
+          </p>
+          <div class="service-bar" aria-hidden="true"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── Partners ───────────────────────────────── -->
+    <section id="partners" aria-label="Global integration partners">
+      <p class="partners-eyebrow reveal">Global Integration Partners</p>
+
+      <div class="partners-track-wrap reveal">
+        <div class="partners-track" role="list" aria-label="Partner logos">
+          <!-- Set A -->
+          <div class="partner-item" role="listitem">
+            <span class="material-symbols-outlined icon" aria-hidden="true">database</span>
+            <span class="name">VectaCore</span>
+          </div>
+          <div class="partner-item" role="listitem">
+            <span class="material-symbols-outlined icon" aria-hidden="true">cloud</span>
+            <span class="name">Loomis Labs</span>
+          </div>
+          <div class="partner-item" role="listitem">
+            <span class="material-symbols-outlined icon" aria-hidden="true">memory</span>
+            <span class="name">Axiom Intelligence</span>
+          </div>
+          <div class="partner-item" role="listitem">
+            <span class="material-symbols-outlined icon" aria-hidden="true">security</span>
+            <span class="name">Synapse Dynamics</span>
+          </div>
+          <div class="partner-item" role="listitem">
+            <span class="material-symbols-outlined icon" aria-hidden="true">hub</span>
+            <span class="name">Quantix Flow</span>
+          </div>
+          <div class="partner-item" role="listitem">
+            <span class="material-symbols-outlined icon" aria-hidden="true">settings_input_composite</span>
+            <span class="name">Nexus Protocol</span>
+          </div>
+          <!-- Set B — duplicate for seamless marquee loop -->
+          <div class="partner-item" aria-hidden="true">
+            <span class="material-symbols-outlined icon">database</span>
+            <span class="name">VectaCore</span>
+          </div>
+          <div class="partner-item" aria-hidden="true">
+            <span class="material-symbols-outlined icon">cloud</span>
+            <span class="name">Loomis Labs</span>
+          </div>
+          <div class="partner-item" aria-hidden="true">
+            <span class="material-symbols-outlined icon">memory</span>
+            <span class="name">Axiom Intelligence</span>
+          </div>
+          <div class="partner-item" aria-hidden="true">
+            <span class="material-symbols-outlined icon">security</span>
+            <span class="name">Synapse Dynamics</span>
+          </div>
+          <div class="partner-item" aria-hidden="true">
+            <span class="material-symbols-outlined icon">hub</span>
+            <span class="name">Quantix Flow</span>
+          </div>
+          <div class="partner-item" aria-hidden="true">
+            <span class="material-symbols-outlined icon">settings_input_composite</span>
+            <span class="name">Nexus Protocol</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ────────────────────────────────────── -->
+    <section id="cta" aria-label="Call to action">
+      <div class="cta-bg" aria-hidden="true"></div>
+      <h2 class="cta-title reveal">
+        Command the<br>
+        Future of Data
+      </h2>
+      <p class="cta-sub reveal reveal-delay-1">
+        The protocol is open. Secure your integration today.
+      </p>
+      <a href="mailto:contact@mardakhay.io" class="btn-cta reveal reveal-delay-2">
+        <span>Initiate Contact</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ──────────────────────────────────── -->
+  <footer id="footer" role="contentinfo">
+    <a href="#hero" class="footer-logo" aria-label="Mardakhay — back to top">MARDAKHAY</a>
+    <p class="footer-copy">© 2026 Mardakhay Engineering. All rights reserved.</p>
+    <ul class="footer-links" role="list">
+      <li><a href="#">Privacy Protocol</a></li>
+      <li><a href="#">Security Docs</a></li>
+      <li><a href="#">Terms of Service</a></li>
+    </ul>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
