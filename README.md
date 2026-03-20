@@ -1,6 +1,6 @@
 # MARDAKHAY — AI & Data Science Engineering
 
-A high-precision landing page for an AI and data engineering firm, built with semantic HTML, vanilla CSS, and vanilla JS — no frameworks, no dependencies.
+A high-precision landing page for a fictional AI and data engineering firm, built with semantic HTML, vanilla CSS, and vanilla JS — no frameworks, no dependencies.
 
 ## Features
 
