@@ -5,28 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MARDAKHAY | AI &amp; Data Science Engineering</title>
   <meta name="description" content="Mardakhay — Architecting intelligence. High-precision AI frameworks and data engineering." />
+  <meta property="og:title"       content="MARDAKHAY | AI &amp; Data Science Engineering" />
+  <meta property="og:description" content="Architecting intelligence at scale." />
+  <meta property="og:type"        content="website" />
+  <meta name="theme-color"        content="#040913" />
 
-  <!-- Preconnect for faster font loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Custom cursor elements -->
   <div id="cursor-dot"  aria-hidden="true"></div>
   <div id="cursor-ring" aria-hidden="true"></div>
-
-  <!-- Scroll progress indicator -->
   <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
 
-  <!-- ── Navigation ─────────────────────────────── -->
   <nav id="navbar" role="navigation" aria-label="Primary navigation">
     <a href="#hero" class="nav-logo" aria-label="Mardakhay — back to top">MARDAKHAY</a>
 
@@ -36,22 +31,18 @@
       <li><a href="#partners">Partners</a></li>
     </ul>
 
-    <a href="#cta" class="nav-cta"><span>Connect</span></a>
+    <a href="#cta" class="nav-cta" data-modal="open"><span>Connect</span></a>
 
-    <!-- Mobile hamburger -->
     <button
       class="nav-hamburger"
       aria-label="Toggle navigation menu"
       aria-expanded="false"
       aria-controls="nav-mobile"
     >
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- Mobile navigation overlay -->
   <div
     id="nav-mobile"
     class="nav-mobile"
@@ -86,7 +77,7 @@
           engineering rigor.
         </p>
         <div class="hero-actions reveal reveal-delay-3">
-          <a href="#solutions" class="btn-primary"><span>Initiate Protocol</span></a>
+          <a href="#solutions" class="btn-primary" data-modal="open"><span>Initiate Protocol</span></a>
           <a href="#services"  class="btn-ghost">Documentation</a>
         </div>
       </div>
@@ -136,7 +127,6 @@
 
       <div class="bento-grid">
 
-        <!-- Card 1 — Neural Fabric (main, 8 cols) -->
         <article class="bento-card bento-main reveal">
           <div>
             <p class="card-tag">Core Infrastructure</p>
@@ -155,7 +145,6 @@
           <span class="card-ghost-text" aria-hidden="true">INFRA</span>
         </article>
 
-        <!-- Card 2 — SDK (side, 4 cols) -->
         <article class="bento-card bento-side reveal reveal-delay-1">
           <div>
             <span class="material-symbols-outlined" style="font-size:2.2rem;color:var(--white);margin-bottom:20px;display:block" aria-hidden="true">terminal</span>
@@ -169,13 +158,11 @@
           </ul>
         </article>
 
-        <!-- Card 3 — Intelligence Audit (small, 4 cols) -->
         <article class="bento-card bento-small reveal reveal-delay-2">
           <div>
             <h3 class="card-title" style="font-size:1.8rem">Intelligence Audit</h3>
             <p class="card-desc">Systemic verification of AI outputs to ensure ethical alignment and mathematical accuracy.</p>
           </div>
-          <!-- Inline SVG matrix — no external image needed -->
           <div class="audit-matrix" aria-label="Cybersecurity matrix visualisation">
             <svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" class="audit-svg" aria-hidden="true">
               <defs>
@@ -189,13 +176,11 @@
                   <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                 </filter>
               </defs>
-              <!-- Grid: horizontal -->
               <line x1="0" y1="25"  x2="320" y2="25"  stroke="rgba(74,124,255,.15)" stroke-width="0.5"/>
               <line x1="0" y1="50"  x2="320" y2="50"  stroke="rgba(74,124,255,.15)" stroke-width="0.5"/>
               <line x1="0" y1="75"  x2="320" y2="75"  stroke="rgba(74,124,255,.15)" stroke-width="0.5"/>
               <line x1="0" y1="100" x2="320" y2="100" stroke="rgba(74,124,255,.15)" stroke-width="0.5"/>
               <line x1="0" y1="125" x2="320" y2="125" stroke="rgba(74,124,255,.15)" stroke-width="0.5"/>
-              <!-- Grid: vertical -->
               <line x1="40"  y1="0" x2="40"  y2="150" stroke="rgba(74,124,255,.1)" stroke-width="0.5"/>
               <line x1="80"  y1="0" x2="80"  y2="150" stroke="rgba(74,124,255,.1)" stroke-width="0.5"/>
               <line x1="120" y1="0" x2="120" y2="150" stroke="rgba(74,124,255,.1)" stroke-width="0.5"/>
@@ -203,43 +188,35 @@
               <line x1="200" y1="0" x2="200" y2="150" stroke="rgba(74,124,255,.1)" stroke-width="0.5"/>
               <line x1="240" y1="0" x2="240" y2="150" stroke="rgba(74,124,255,.1)" stroke-width="0.5"/>
               <line x1="280" y1="0" x2="280" y2="150" stroke="rgba(74,124,255,.1)" stroke-width="0.5"/>
-              <!-- Connection lines -->
               <line x1="40"  y1="25"  x2="120" y2="25"  stroke="rgba(74,212,128,.25)" stroke-width="0.8"/>
               <line x1="120" y1="25"  x2="200" y2="50"  stroke="rgba(74,212,128,.2)"  stroke-width="0.8"/>
               <line x1="200" y1="50"  x2="280" y2="25"  stroke="rgba(74,212,128,.2)"  stroke-width="0.8"/>
               <line x1="80"  y1="75"  x2="160" y2="100" stroke="rgba(74,124,255,.2)"  stroke-width="0.8"/>
               <line x1="160" y1="100" x2="240" y2="75"  stroke="rgba(74,124,255,.2)"  stroke-width="0.8"/>
               <line x1="40"  y1="125" x2="160" y2="100" stroke="rgba(74,212,128,.15)" stroke-width="0.8"/>
-              <!-- Nodes: verified (green) -->
-              <circle cx="40"  cy="25"  r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
-              <circle cx="120" cy="25"  r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
-              <circle cx="200" cy="50"  r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
-              <circle cx="280" cy="25"  r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
-              <circle cx="80"  cy="75"  r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
-              <circle cx="240" cy="75"  r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
-              <circle cx="160" cy="100" r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
-              <circle cx="40"  cy="125" r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
-              <circle cx="280" cy="125" r="3" fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
-              <!-- Nodes: active (blue) -->
+              <circle cx="40"  cy="25"  r="3"   fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="120" cy="25"  r="3"   fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="200" cy="50"  r="3"   fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="280" cy="25"  r="3"   fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="80"  cy="75"  r="3"   fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="240" cy="75"  r="3"   fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="160" cy="100" r="3"   fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="40"  cy="125" r="3"   fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="280" cy="125" r="3"   fill="#4ade80" filter="url(#nodeGlow)" opacity="0.9"/>
               <circle cx="80"  cy="25"  r="2.5" fill="#4a7cff" filter="url(#nodeGlow)" opacity="0.8"/>
               <circle cx="160" cy="50"  r="2.5" fill="#4a7cff" filter="url(#nodeGlow)" opacity="0.8"/>
               <circle cx="120" cy="100" r="2.5" fill="#4a7cff" filter="url(#nodeGlow)" opacity="0.8"/>
               <circle cx="200" cy="125" r="2.5" fill="#4a7cff" filter="url(#nodeGlow)" opacity="0.8"/>
-              <!-- Nodes: flagged anomalies (red) -->
-              <circle cx="160" cy="25"  r="3" fill="#f87171" filter="url(#nodeGlow)" opacity="0.9"/>
-              <circle cx="0"   cy="75"  r="3" fill="#f87171" filter="url(#nodeGlow)" opacity="0.9"/>
-              <circle cx="320" cy="100" r="3" fill="#f87171" filter="url(#nodeGlow)" opacity="0.9"/>
-              <!-- Anomaly cross on flagged node -->
+              <circle cx="160" cy="25"  r="3"   fill="#f87171" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="0"   cy="75"  r="3"   fill="#f87171" filter="url(#nodeGlow)" opacity="0.9"/>
+              <circle cx="320" cy="100" r="3"   fill="#f87171" filter="url(#nodeGlow)" opacity="0.9"/>
               <line x1="155" y1="20" x2="165" y2="30" stroke="#f87171" stroke-width="1.2" opacity="0.85"/>
               <line x1="165" y1="20" x2="155" y2="30" stroke="#f87171" stroke-width="1.2" opacity="0.85"/>
-              <!-- Scan line -->
               <rect x="0" y="0" width="320" height="18" fill="url(#scanGrad)" opacity="0.6">
                 <animateTransform attributeName="transform" type="translate"
                   from="0,0" to="0,150" dur="2.8s" repeatCount="indefinite"/>
               </rect>
-              <!-- Status readout -->
-              <text x="8" y="144"
-                font-family="'JetBrains Mono', monospace"
+              <text x="8" y="144" font-family="'JetBrains Mono', monospace"
                 font-size="7" fill="rgba(74,212,128,.7)" letter-spacing="0.05em">
                 SCAN ACTIVE — 3 ANOMALIES FLAGGED
               </text>
@@ -247,7 +224,6 @@
           </div>
         </article>
 
-        <!-- Card 4 — M-Cloud (wide, 8 cols) -->
         <article class="bento-card bento-wide reveal reveal-delay-1"
           style="display:flex; flex-direction:row; gap:48px; align-items:center; flex-wrap:wrap">
           <div style="flex:1; min-width:240px">
@@ -257,7 +233,7 @@
               Sovereign cloud hosting tuned for GPU-intensive workloads
               and massive dataset training pipelines.
             </p>
-            <a href="#" class="section-link" style="margin-top:28px; display:inline-block">
+            <a href="#" class="section-link" style="margin-top:28px; display:inline-block" data-modal="open">
               Request Access →
             </a>
           </div>
@@ -320,7 +296,6 @@
 
       <div class="partners-track-wrap reveal">
         <div class="partners-track" role="list" aria-label="Partner logos">
-          <!-- Set A -->
           <div class="partner-item" role="listitem">
             <span class="material-symbols-outlined icon" aria-hidden="true">database</span>
             <span class="name">VectaCore</span>
@@ -345,7 +320,7 @@
             <span class="material-symbols-outlined icon" aria-hidden="true">settings_input_composite</span>
             <span class="name">Nexus Protocol</span>
           </div>
-          <!-- Set B — duplicate for seamless marquee loop -->
+          <!-- Duplicate set B for seamless marquee loop -->
           <div class="partner-item" aria-hidden="true">
             <span class="material-symbols-outlined icon">database</span>
             <span class="name">VectaCore</span>
@@ -384,7 +359,7 @@
       <p class="cta-sub reveal reveal-delay-1">
         The protocol is open. Secure your integration today.
       </p>
-      <a href="mailto:contact@mardakhay.io" class="btn-cta reveal reveal-delay-2">
+      <a href="#" class="btn-cta reveal reveal-delay-2" data-modal="open">
         <span>Initiate Contact</span>
       </a>
     </section>
@@ -401,6 +376,42 @@
       <li><a href="#">Terms of Service</a></li>
     </ul>
   </footer>
+
+  <!-- ── Contact Modal ──────────────────────────── -->
+  <div
+    id="contact-modal"
+    class="modal-overlay"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+  >
+    <div class="modal-panel">
+      <div class="modal-header">
+        <div>
+          <h3 id="modal-title" class="modal-title">Initiate Contact</h3>
+          <p class="modal-subtitle">Share a few details and we will route the request.</p>
+        </div>
+        <button class="modal-close" id="modal-close" aria-label="Close contact form">
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
+        </button>
+      </div>
+
+      <form id="contact-form" class="modal-form" novalidate>
+        <div class="form-group">
+          <input type="text"  name="name"    id="field-name"    class="form-input" placeholder="Name"    required autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email"   id="field-email"   class="form-input" placeholder="Email"   required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <textarea           name="message" id="field-message" class="form-input form-textarea" placeholder="Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="form-submit"><span>Send Request</span></button>
+        <p id="form-status" class="form-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>
