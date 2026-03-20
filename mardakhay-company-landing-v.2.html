@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MARDAKHAY | AI & Data Science Engineering</title>
+  <meta name="description" content="MARDAKHAY builds AI infrastructure, machine learning systems, and data architecture for high-performance organizations." />
+  <meta property="og:title" content="MARDAKHAY | AI & Data Science Engineering" />
+  <meta property="og:description" content="Architecting intelligence at scale." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b1326" />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-primary": "#5c5f61",
+            "surface-container-high": "#222a3d",
+            "on-primary-fixed-variant": "#e0e3e5",
+            "on-tertiary": "#0d1c2e",
+            "on-primary": "#191c1e",
+            "on-tertiary-fixed": "#ffffff",
+            "tertiary": "#d5e3fc",
+            "on-secondary-fixed": "#0d1c2d",
+            "on-secondary-container": "#d4e4fa",
+            "error": "#ffb4ab",
+            "surface-container-low": "#131b2e",
+            "surface": "#0b1326",
+            "tertiary-container": "#8392a8",
+            "inverse-surface": "#dae2fd",
+            "surface-dim": "#0b1326",
+            "on-primary-container": "#000000",
+            "secondary": "#b9c8de",
+            "outline-variant": "#474747",
+            "surface-tint": "#c4c7c9",
+            "secondary-fixed": "#b9c8de",
+            "on-tertiary-fixed-variant": "#d5e3fc",
+            "on-secondary": "#0d1c2d",
+            "on-tertiary-container": "#000000",
+            "surface-variant": "#2d3449",
+            "primary-fixed": "#5c5f61",
+            "primary-fixed-dim": "#444749",
+            "primary-container": "#d2d5d7",
+            "surface-bright": "#31394d",
+            "on-error": "#690005",
+            "inverse-on-surface": "#283044",
+            "secondary-container": "#39485a",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed-dim": "#9dacc2",
+            "on-background": "#dae2fd",
+            "tertiary-fixed": "#515f74",
+            "on-secondary-fixed-variant": "#2e3c4e",
+            "background": "#0b1326",
+            "on-surface": "#dae2fd",
+            "tertiary-fixed-dim": "#3a485b",
+            "surface-container": "#171f33",
+            "primary": "#ffffff",
+            "surface-container-highest": "#2d3449",
+            "on-primary-fixed": "#ffffff",
+            "surface-container-lowest": "#060e20",
+            "error-container": "#93000a",
+            "outline": "#919191",
+            "on-surface-variant": "#c6c6c6"
+          },
+          fontFamily: {
+            headline: ["Inter", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {
+            DEFAULT: "0px",
+            lg: "0px",
+            xl: "0px",
+            full: "9999px"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #0b1326;
+      color: #dae2fd;
+      font-family: "Inter", sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.45;
+      mix-blend-mode: soft-light;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+    }
+
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #ffffff, #d5e3fc);
+      z-index: 100;
+    }
+
+    nav {
+      transition: background-color 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(19, 27, 46, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-panel {
+      background: rgba(23, 31, 51, 0.6);
+      backdrop-filter: blur(24px);
+    }
+
+    .hover-lift {
+      transition: transform 0.28s ease, opacity 0.28s ease;
+      will-change: transform;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-4px);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bento-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bento-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.07), transparent 58%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bento-card:hover::before {
+      opacity: 1;
+    }
+
+    button, a {
+      touch-action: manipulation;
+    }
+    section { scroll-margin-top: 6rem; }
+
+
+    @media (hover: none) and (pointer: coarse) {
+      html, body, button, a {
+        cursor: default !important;
+      }
+    }
+
+    @media (max-width: 479px) {
+      nav {
+        padding: 0.85rem 1rem;
+        height: auto;
+      }
+
+      nav > div:first-child {
+        font-size: 1.1rem;
+      }
+
+      .hero-shell {
+        min-height: auto;
+        padding: 5rem 1rem 3rem;
+      }
+
+      .hero-title {
+        font-size: clamp(3rem, 14vw, 4.3rem);
+        line-height: 0.92;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-copy {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .hero-buttons > * {
+        width: 100%;
+        text-align: center;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .metrics-grid > div {
+        padding: 1.1rem 1rem;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      section#solutions,
+      section#services,
+      section#partners,
+      section#contact {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .solutions-grid,
+      .services-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .solutions-grid > div,
+      .services-grid > div {
+        grid-column: auto !important;
+        min-height: auto;
+      }
+
+      footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 1rem;
+      }
+
+      footer > div:last-child {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 480px) {
+      .hero-shell {
+        padding: 5rem 1.5rem 3.5rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .hero-buttons > * {
+        width: 100%;
+        text-align: center;
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      .metrics-grid > div {
+        padding: 1.5rem;
+      }
+
+      section#solutions,
+      section#services,
+      section#partners,
+      section#contact {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+
+    @media (min-width: 640px) {
+      .hero-shell {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .hero-title {
+        font-size: clamp(4rem, 10vw, 6rem);
+      }
+
+      .hero-copy {
+        font-size: 1.25rem;
+        max-width: 42rem;
+      }
+
+      .metrics-grid > div {
+        padding: 1.75rem;
+      }
+
+      .solutions-grid {
+        gap: 1.25rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (min-width: 768px) {
+      nav {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .hero-shell {
+        min-height: calc(100vh - 5rem);
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+
+      .hero-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .hero-buttons > * {
+        width: auto;
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      }
+
+      .metrics-grid > div {
+        padding: 2rem;
+        border-bottom: none !important;
+      }
+
+      .solutions-grid {
+        grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+        gap: 1.5rem;
+      }
+
+      .solutions-grid > div:nth-child(1) { grid-column: span 8 / span 8 !important; }
+      .solutions-grid > div:nth-child(2) { grid-column: span 4 / span 4 !important; }
+      .solutions-grid > div:nth-child(3) { grid-column: span 4 / span 4 !important; }
+      .solutions-grid > div:nth-child(4) { grid-column: span 8 / span 8 !important; }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      .services-grid > div {
+        border-top: none !important;
+        border-bottom: none !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      nav {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+      }
+
+      .hero-shell {
+        padding-left: 4.5rem;
+        padding-right: 4.5rem;
+      }
+
+      .solutions-grid {
+        gap: 2rem !important;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      nav {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+
+      .hero-shell {
+        padding-left: 8rem;
+        padding-right: 8rem;
+      }
+
+      .metrics-grid > div,
+      .solutions-grid > div,
+      .services-grid > div {
+        padding: 3rem;
+      }
+
+      section#partners,
+      section#contact {
+        padding-left: 8rem;
+        padding-right: 8rem;
+      }
+    }
+
+    @media (min-width: 1536px) {
+      html { font-size: 18px; }
+
+      .hero-title {
+        font-size: clamp(5rem, 7vw, 7.5rem);
+      }
+
+      .hero-copy {
+        font-size: 1.4rem;
+      }
+
+      .metrics-grid > div .metric-value {
+        font-size: 3.75rem;
+      }
+
+      .metrics-grid > div {
+        padding: 3.25rem;
+      }
+    }
+
+    @media (orientation: landscape) and (max-height: 479px) {
+      .hero-shell {
+        min-height: auto;
+        padding-top: 4rem;
+        padding-bottom: 2.5rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2.8rem, 8vw, 4.2rem);
+        margin-bottom: 1rem;
+      }
+
+      .hero-copy {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        max-width: 36rem;
+      }
+
+      .hero-buttons {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 0.75rem;
+      }
+
+      .hero-buttons > * {
+        width: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.9rem;
+        padding-bottom: 0.9rem;
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        overflow-x: auto;
+      }
+
+      .metrics-grid > div {
+        padding: 1rem;
+      }
+    }
+
+    @media (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5) {
+      #progressBar {
+        height: 1.5px;
+      }
+
+      .metrics-grid > div,
+      .solutions-grid > div,
+      .services-grid > div,
+      footer {
+        border-color: rgba(255, 255, 255, 0.08) !important;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .hover-lift:hover {
+        transform: none !important;
+      }
+
+      #progressBar {
+        transition: none !important;
+      }
+    }
+
+    @media print {
+      @page {
+        margin: 12mm;
+      }
+
+      * {
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        border-color: #000 !important;
+      }
+
+      html, body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+
+      nav,
+      #progressBar,
+      #contactModal,
+      #mobileMenu,
+      #menuBtn,
+      #connectBtn,
+      #heroCtaBtn,
+      #cloudCtaBtn,
+      #ctaContactBtn,
+      .material-symbols-outlined,
+      footer a {
+        display: none !important;
+      }
+
+      main {
+        padding-top: 0 !important;
+      }
+
+      section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .solutions-grid,
+      .services-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="selection:bg-primary selection:text-on-primary">
+  <div id="progressBar" aria-hidden="true"></div>
+
+  <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-6 h-20 bg-[#131b2e] border-none shadow-none">
+    <div class="font-black tracking-tighter text-2xl text-white uppercase">MARDAKHAY</div>
+
+    <div class="hidden md:flex items-center space-x-12">
+      <a class="nav-link text-white border-b-2 border-white pb-1 font-['Inter'] uppercase tracking-tight text-sm hover:opacity-80 transition-opacity duration-200" href="#solutions" data-target="solutions">Solutions</a>
+      <a class="nav-link text-[#b9c8de] font-['Space_Grotesk'] uppercase tracking-tight text-sm hover:opacity-80 transition-opacity duration-200" href="#services" data-target="services">Engineering</a>
+      <a class="nav-link text-[#b9c8de] font-['Space_Grotesk'] uppercase tracking-tight text-sm hover:opacity-80 transition-opacity duration-200" href="#partners" data-target="partners">Partners</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button id="menuBtn" class="md:hidden text-white" aria-label="Open menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      <button id="connectBtn" class="bg-primary text-on-primary px-6 py-2 font-['Inter'] uppercase tracking-tight text-sm font-bold scale-95 active:scale-90 transition-transform" aria-label="Open contact form">
+        Connect
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 w-full bg-[#131b2e] border-t border-white/10 px-8 py-6" aria-hidden="true">
+      <div class="flex flex-col gap-4">
+        <a class="text-white uppercase tracking-tight text-sm" href="#solutions">Solutions</a>
+        <a class="text-white uppercase tracking-tight text-sm" href="#services">Engineering</a>
+        <a class="text-white uppercase tracking-tight text-sm" href="#partners">Partners</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-20">
+    <section class="hero-shell relative min-h-[921px] flex flex-col justify-center px-8 md:px-24 overflow-hidden">
+      <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+        <div class="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-white blur-[150px]"></div>
+        <div class="absolute inset-0 opacity-40" style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 50% 50% at 85% 18%, black 0%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 50% 50% at 85% 18%, black 0%, transparent 70%);"></div>
+      </div>
+
+      <div class="relative z-10 max-w-5xl reveal">
+        <span class="font-['Space_Grotesk'] text-secondary text-xs tracking-[0.4em] uppercase mb-8 block">EST. 2015— ARCHITECTING INTELLIGENCE</span>
+        <h1 class="hero-title text-white font-black text-6xl md:text-8xl leading-[0.9] tracking-tighter mb-12 uppercase">
+          The Monolith <br />of Data INDUSTRY
+        </h1>
+        <p class="hero-copy text-secondary text-xl md:text-2xl font-light max-w-2xl leading-relaxed mb-12">
+          We engineer high-precision AI frameworks that transform chaotic data into immovable market advantages. Authority through engineering rigor.
+        </p>
+        <div class="hero-buttons flex flex-wrap gap-4">
+          <button id="heroCtaBtn" class="bg-primary text-on-primary px-10 py-5 font-bold uppercase tracking-widest text-sm transition-opacity hover:opacity-90" aria-label="Initiate protocol">
+            Initiate Protocol
+          </button>
+          <a href="#solutions" class="border border-white/20 text-white px-10 py-5 font-bold uppercase tracking-widest text-sm hover:bg-white/5 transition-colors">
+            Documentation
+          </a>
+        </div>
+      </div>
+
+      <div class="absolute bottom-8 right-8 hidden lg:flex flex-col items-center gap-2 z-10">
+        <span class="font-['Space_Grotesk'] text-[10px] tracking-[0.35em] uppercase text-secondary [writing-mode:vertical-rl]">Scroll</span>
+        <span class="w-px h-12 bg-gradient-to-b from-white to-transparent animate-pulse"></span>
+      </div>
+    </section>
+
+    <section class="metrics-grid grid grid-cols-1 md:grid-cols-4 bg-surface-container-lowest border-y border-white/5 reveal">
+      <div class="p-12 border-r border-white/5 flex flex-col gap-4">
+        <span class="font-['Space_Grotesk'] text-[10px] tracking-widest text-secondary uppercase">Processing Latency</span>
+        <div class="metric-value text-white text-5xl font-black tracking-tighter">0.4ms</div>
+        <span class="text-primary text-[10px] font-bold">↑ 12.4% EFFICIENCY</span>
+      </div>
+      <div class="p-12 border-r border-white/5 flex flex-col gap-4">
+        <span class="font-['Space_Grotesk'] text-[10px] tracking-widest text-secondary uppercase">Neural Parameters</span>
+        <div class="metric-value text-white text-5xl font-black tracking-tighter">14.2T</div>
+        <span class="text-primary text-[10px] font-bold">OPTIMIZED CORE</span>
+      </div>
+      <div class="p-12 border-r border-white/5 flex flex-col gap-4">
+        <span class="font-['Space_Grotesk'] text-[10px] tracking-widest text-secondary uppercase">Data Throughput</span>
+        <div class="metric-value text-white text-5xl font-black tracking-tighter">84PB</div>
+        <span class="text-primary text-[10px] font-bold">ANNUAL VOLUME</span>
+      </div>
+      <div class="p-12 flex flex-col gap-4">
+        <span class="font-['Space_Grotesk'] text-[10px] tracking-widest text-secondary uppercase">Uptime Reliability</span>
+        <div class="metric-value text-white text-5xl font-black tracking-tighter">99.96</div>
+        <span class="text-primary text-[10px] font-bold">SYSTEM INTEGRITY</span>
+      </div>
+    </section>
+
+    <section id="solutions" class="py-24 px-8 md:px-24">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal">
+        <div class="max-w-xl">
+          <h2 class="text-white text-4xl font-bold uppercase tracking-tight mb-4">Engineering Solutions</h2>
+          <p class="text-secondary font-light">Precision-built internal and external tools designed for sovereign data control and autonomous intelligence scaling.</p>
+        </div>
+      </div>
+
+      <div class="solutions-grid grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="bento-card md:col-span-8 bg-surface-container p-12 flex flex-col justify-between min-h-[500px] relative group overflow-hidden hover-lift reveal">
+          <div class="relative z-10">
+            <span class="text-primary-container text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">Core Infrastructure</span>
+            <h3 class="text-white text-4xl font-black uppercase mb-6">Internal Neural Fabric</h3>
+            <p class="text-secondary max-w-md">The backbone of organizational intelligence. A proprietary mesh of LLMs and vector databases integrated directly into your legacy architecture.</p>
+          </div>
+          <div class="relative z-10 flex justify-between items-end">
+            <button class="bg-white text-black p-4" aria-label="Open internal neural fabric">
+              <span class="material-symbols-outlined">arrow_outward</span>
+            </button>
+            <div class="text-white/10 text-9xl font-black uppercase tracking-tighter absolute -bottom-10 -right-4 select-none group-hover:text-white/20 transition-colors">INFRA</div>
+          </div>
+        </div>
+
+        <div class="bento-card md:col-span-4 bg-surface-container-high p-8 flex flex-col justify-between group hover-lift reveal">
+          <div>
+            <span class="material-symbols-outlined text-white text-4xl mb-6">terminal</span>
+            <h3 class="text-white text-2xl font-bold uppercase mb-4">M.SDK 2.0</h3>
+            <p class="text-secondary text-sm">Deployment-ready toolkits for high-frequency data engineering and predictive modeling.</p>
+          </div>
+          <ul class="mt-8 space-y-4">
+            <li class="text-[10px] text-white/50 border-t border-white/10 pt-4 font-['Space_Grotesk'] uppercase tracking-widest">Scalable Nodes</li>
+            <li class="text-[10px] text-white/50 border-t border-white/10 pt-4 font-['Space_Grotesk'] uppercase tracking-widest">Auto-Encryption</li>
+            <li class="text-[10px] text-white/50 border-t border-white/10 pt-4 font-['Space_Grotesk'] uppercase tracking-widest">Real-time Telemetry</li>
+          </ul>
+        </div>
+
+        <div class="bento-card md:col-span-4 bg-surface-container-low p-8 flex flex-col justify-between hover-lift reveal">
+          <div>
+            <h3 class="text-white text-2xl font-bold uppercase mb-4">Intelligence Audit</h3>
+            <p class="text-secondary text-sm">Systemic verification of AI outputs to ensure ethical alignment and mathematical accuracy.</p>
+          </div>
+          <div class="mt-8">
+            <img
+              class="w-full h-32 object-cover grayscale opacity-50 contrast-125"
+              alt="Cybersecurity matrix visualization with glowing data nodes"
+              src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400'><defs><linearGradient id='g' x1='0' x2='1'><stop offset='0%' stop-color='%23060e20'/><stop offset='100%' stop-color='%23222a3d'/></linearGradient></defs><rect width='1200' height='400' fill='url(%23g)'/><g opacity='0.9'><circle cx='160' cy='96' r='10' fill='%23ffffff'/><circle cx='260' cy='150' r='8' fill='%23b9c8de'/><circle cx='390' cy='80' r='12' fill='%23d5e3fc'/><circle cx='530' cy='125' r='7' fill='%23ffffff'/><circle cx='700' cy='90' r='10' fill='%23b9c8de'/><circle cx='850' cy='150' r='12' fill='%23ffffff'/><circle cx='980' cy='95' r='8' fill='%23d5e3fc'/><circle cx='1080' cy='180' r='10' fill='%23ffffff'/><path d='M160 96 L260 150 L390 80 L530 125 L700 90 L850 150 L980 95 L1080 180' stroke='%23ffffff' stroke-opacity='0.35' stroke-width='3' fill='none'/><path d='M260 150 L390 80' stroke='%23b9c8de' stroke-opacity='0.25' stroke-width='2'/><path d='M530 125 L700 90' stroke='%23b9c8de' stroke-opacity='0.25' stroke-width='2'/><path d='M850 150 L980 95' stroke='%23b9c8de' stroke-opacity='0.25' stroke-width='2'/></g></svg>"
+            />
+          </div>
+        </div>
+
+        <div class="bento-card md:col-span-8 bg-surface-container-highest p-12 flex flex-col md:flex-row gap-12 items-center hover-lift reveal">
+          <div class="flex-1">
+            <h3 class="text-white text-4xl font-black uppercase mb-4">M-Cloud Alpha</h3>
+            <p class="text-secondary">Sovereign cloud hosting specifically tuned for GPU-intensive workloads and massive dataset training.</p>
+            <button id="cloudCtaBtn" class="mt-8 border-b-2 border-white text-white font-bold text-xs uppercase tracking-widest pb-1">
+              Request Access
+            </button>
+          </div>
+          <div class="flex-1 w-full bg-[#060e20] p-6 font-mono text-[10px] text-primary/60 border border-white/5">
+            <div class="mb-2">system.init_sovereign_node()</div>
+            <div class="mb-2 text-white">&gt;&gt; Loading Encryption Keys...</div>
+            <div class="mb-2 text-white">&gt;&gt; Establishing Neural Link...</div>
+            <div class="text-primary font-bold">&gt;&gt; CONNECTION SECURE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-24 bg-[#060e20]">
+      <div class="px-8 md:px-24">
+        <div class="services-grid grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/10 reveal">
+          <div class="p-16 hover:bg-white/5 transition-colors group">
+            <div class="text-white/20 text-4xl font-black mb-8 group-hover:text-white transition-colors">01</div>
+            <h4 class="text-white text-xl font-bold uppercase tracking-widest mb-6">AI Engineering</h4>
+            <p class="text-secondary font-light leading-relaxed">Developing bespoke LLMs and generative agents that mirror your specific organizational logic and domain expertise.</p>
+          </div>
+          <div class="p-16 hover:bg-white/5 transition-colors border-y md:border-y-0 md:border-x border-white/10 group">
+            <div class="text-white/20 text-4xl font-black mb-8 group-hover:text-white transition-colors">02</div>
+            <h4 class="text-white text-xl font-bold uppercase tracking-widest mb-6">Machine Learning</h4>
+            <p class="text-secondary font-light leading-relaxed">Predictive analytics frameworks that identify market anomalies before they manifest, using non-linear modeling.</p>
+          </div>
+          <div class="p-16 hover:bg-white/5 transition-colors group">
+            <div class="text-white/20 text-4xl font-black mb-8 group-hover:text-white transition-colors">03</div>
+            <h4 class="text-white text-xl font-bold uppercase tracking-widest mb-6">Data Architecture</h4>
+            <p class="text-secondary font-light leading-relaxed">Hardening data pipelines to eliminate bottlenecks and ensure high-fidelity inputs for downstream intelligence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="partners" class="py-24 px-8 md:px-24">
+      <h2 class="font-['Space_Grotesk'] text-center text-secondary text-xs tracking-[0.5em] uppercase mb-16 reveal">Global Integration Partners</h2>
+      <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-700 reveal">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-4xl">database</span>
+          <span class="font-bold text-xl uppercase tracking-tighter">VectaCore</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-4xl">cloud</span>
+          <span class="font-bold text-xl uppercase tracking-tighter">Loomis Labs</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-4xl">memory</span>
+          <span class="font-bold text-xl uppercase tracking-tighter">Axiom Intelligence</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-4xl">security</span>
+          <span class="font-bold text-xl uppercase tracking-tighter">Synapse Dynamics</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-4xl">hub</span>
+          <span class="font-bold text-xl uppercase tracking-tighter">Quantix Flow</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-32 bg-primary text-on-primary">
+      <div class="px-8 md:px-24 text-center reveal">
+        <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-none">
+          Command the <br />Future of Data
+        </h2>
+        <p class="text-xl max-w-2xl mx-auto mb-12 font-medium opacity-80 uppercase tracking-widest">
+          The protocol is open. Secure your integration today.
+        </p>
+        <button id="ctaContactBtn" class="bg-black text-white px-12 py-6 font-black uppercase tracking-widest hover:bg-white hover:text-black border-2 border-black transition-all">
+          Initiate Contact
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-8 bg-[#060e20] border-t border-white/10">
+    <div class="font-['Inter'] font-bold text-white tracking-widest uppercase">MARDAKHAY</div>
+    <div class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-[#b9c8de] text-center">
+      © 2026 MARDAKHAY ENGINEERING. ALL RIGHTS RESERVED.
+    </div>
+    <div class="flex gap-8">
+      <a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-[#b9c8de] hover:text-white transition-colors" href="#contact">Privacy Protocol</a>
+      <a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-[#b9c8de] hover:text-white transition-colors" href="#contact">Security Documentation</a>
+      <a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-[#b9c8de] hover:text-white transition-colors" href="#contact">Terms of Service</a>
+    </div>
+  </footer>
+
+  <div id="contactModal" class="fixed inset-0 hidden items-center justify-center bg-black/70 z-[80] px-4" aria-hidden="true">
+    <div class="w-full max-w-lg bg-[#131b2e] border border-white/10 p-8 md:p-10">
+      <div class="flex items-start justify-between gap-4 mb-6">
+        <div>
+          <h3 class="text-white text-2xl font-black uppercase tracking-tight">Initiate Contact</h3>
+          <p class="text-secondary text-sm mt-2">Share a few details and we will route the request.</p>
+        </div>
+        <button id="closeModalBtn" class="text-white/70 hover:text-white" aria-label="Close contact form">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <form id="contactForm" class="space-y-4">
+        <input type="text" name="name" required class="w-full p-4 bg-black border border-white/10 text-white outline-none" placeholder="Name" />
+        <input type="email" name="email" required class="w-full p-4 bg-black border border-white/10 text-white outline-none" placeholder="Email" />
+        <textarea name="message" rows="5" required class="w-full p-4 bg-black border border-white/10 text-white outline-none" placeholder="Message"></textarea>
+        <button type="submit" class="w-full bg-white text-black px-6 py-4 font-black uppercase tracking-widest hover:opacity-90 transition-opacity">
+          Send Request
+        </button>
+        <p id="formStatus" class="text-sm text-secondary"></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const progressBar = document.getElementById("progressBar");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const nav = document.querySelector("nav");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = ["solutions", "services", "partners"]
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+
+    // Scroll progress + nav scrolled state
+    function syncOnScroll() {
+      if (progressBar) {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + "%";
+      }
+
+      if (nav) {
+        nav.classList.toggle("scrolled", window.scrollY > 12);
+      }
+    }
+
+    window.addEventListener("scroll", syncOnScroll, { passive: true });
+    syncOnScroll();
+
+    // Mobile menu
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.toggle("hidden");
+        mobileMenu.setAttribute("aria-hidden", String(isHidden));
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.setAttribute("aria-hidden", "true");
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.setAttribute("aria-hidden", "true");
+        }
+      });
+    }
+
+    // Modal handling
+    const contactModal = document.getElementById("contactModal");
+    const connectBtn = document.getElementById("connectBtn");
+    const heroCtaBtn = document.getElementById("heroCtaBtn");
+    const cloudCtaBtn = document.getElementById("cloudCtaBtn");
+    const ctaContactBtn = document.getElementById("ctaContactBtn");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const contactForm = document.getElementById("contactForm");
+    const formStatus = document.getElementById("formStatus");
+
+    function openModal() {
+      if (!contactModal) return;
+      contactModal.classList.remove("hidden");
+      contactModal.classList.add("flex");
+      contactModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      if (!contactModal) return;
+      contactModal.classList.add("hidden");
+      contactModal.classList.remove("flex");
+      contactModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    [connectBtn, heroCtaBtn, cloudCtaBtn, ctaContactBtn].forEach(btn => {
+      if (btn) btn.addEventListener("click", openModal);
+    });
+
+    if (closeModalBtn) closeModalBtn.addEventListener("click", closeModal);
+
+    if (contactModal) {
+      contactModal.addEventListener("click", (e) => {
+        if (e.target === contactModal) closeModal();
+      });
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    if (contactForm) {
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (formStatus) formStatus.textContent = "Request queued. We will respond shortly.";
+        contactForm.reset();
+        setTimeout(closeModal, 900);
+      });
+    }
+
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll(".reveal");
+    if (reduceMotion) {
+      revealEls.forEach(el => el.classList.add("is-visible"));
+    } else if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("is-visible");
+        });
+      }, { threshold: 0.14 });
+      revealEls.forEach(el => observer.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add("is-visible"));
+    }
+
+    // Active nav link
+    function setActiveLink(targetId) {
+      navLinks.forEach(link => {
+        const isActive = link.dataset.target === targetId;
+        link.classList.toggle("text-white", isActive);
+        link.classList.toggle("border-b-2", isActive);
+        link.classList.toggle("border-white", isActive);
+        link.classList.toggle("pb-1", isActive);
+        link.classList.toggle("text-[#b9c8de]", !isActive);
+      });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => setActiveLink(link.dataset.target));
+    });
+
+    if ("IntersectionObserver" in window) {
+      const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActiveLink(entry.target.id);
+        });
+      }, {
+        rootMargin: "-40% 0px -50% 0px",
+        threshold: 0
+      });
+      sections.forEach(section => navObserver.observe(section));
+    } else {
+      const fallback = () => {
+        const center = window.innerHeight * 0.5;
+        let active = sections[0]?.id || "solutions";
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= center && rect.bottom >= center) active = section.id;
+        });
+        setActiveLink(active);
+      };
+      window.addEventListener("scroll", fallback, { passive: true });
+      fallback();
+    }
+
+    // Mouse-follow spotlight on bento cards
+    document.querySelectorAll(".bento-card").forEach(card => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty("--mx", `${x}%`);
+        card.style.setProperty("--my", `${y}%`);
+      });
+    });
+  </script>
+</body>
+</html>
